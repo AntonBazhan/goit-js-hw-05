@@ -8,9 +8,11 @@ class Car {
     this.distance = 0;
     this.price = obj.price;
   }
+
   static getSpecs(car) {
     console.log(car);
   }
+
   get price() {
     return this._price;
   }
@@ -25,22 +27,24 @@ class Car {
 
   turnOff() {
     this.isOn = false;
+    this.speed = 0;
   }
 
+  
   accelerate(value) {
-    if (value < this.maxSpeed) {
+    if (this.speed + value < this.maxSpeed) {
       this.speed += value;
     }
   }
 
   decelerate(value) {
-    if (value > 0) {
-      this.speed -= value;
+    if (this.speed - value > 0) {
+      this.speed = this.speed - value;
     }
-  }
+  } 
 
   drive(hours) {
-    if ((this.isOn = true)) {
+    if ((this.isOn)) {
       this.distance += hours * this.speed;
     }
   }

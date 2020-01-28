@@ -1,12 +1,12 @@
 "use strict";
 
 class User {
-  constructor(obj) {
-    this.name = obj.name;
-    this.age = obj.age;
-    this.followers = obj.followers;
-  }
-
+  constructor({name, age, followers} ) {
+    this.name = name;
+    this.age = age;
+    this.followers = followers;
+    }
+ 
   getInfo() {
     console.log(
       ` User ${this.name} is ${this.age} years old and has ${this.followers} followers`
